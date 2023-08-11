@@ -6,10 +6,18 @@ on:
         required: false
         type: string
         default: ""
+      repocheckout:
+        required: false
+        type: string
+        default: ""
 jobs:
   sonarscan:
     runs-on: "ubuntu-latest"
     steps:
+      - name: repo checkout
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ inputs.repocheckout }}
       - name: rootdir
         run: ls -la
       - name: customdir
