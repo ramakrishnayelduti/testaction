@@ -1,0 +1,16 @@
+name: SonarScan
+on:
+  workflow_call:
+    inputs:
+      dirpath:
+        required: false
+        type: string
+        default: ""
+jobs:
+  sonarscan:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: rootdir
+        run: ls -la
+      - name: customdir
+        run: ls -la ${{ inputs.dirpath }}
