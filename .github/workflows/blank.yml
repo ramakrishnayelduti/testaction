@@ -14,7 +14,7 @@ jobs:
   sonarscan:
     runs-on: "ubuntu-latest"
     steps:
-      - name: repo checkout
+      - name: repo checkout from new branch
         uses: actions/checkout@v3
         with:
           repository: ${{ inputs.repocheckout }}
